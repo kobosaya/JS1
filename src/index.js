@@ -40,10 +40,25 @@
 // val4.address = "Ibaraki";　　//objectを追加することも可能
 // console.log(val4);
 
-//constで定義した配列はプロパティの変数が可能
-const val5 = ["dog", "cat"];
-val5[0] = "bird"; //値の要素の変更も可能
-val5.push("monkey"); //値の要素の追加
-console.log(val5);
+// //constで定義した配列はプロパティの変数が可能
+// const val5 = ["dog", "cat"];
+// val5[0] = "bird"; //値の要素の変更も可能
+// val5.push("monkey"); //値の要素の追加
+// console.log(val5);
 
-//基本はconst。上書きが必要な場合はletを使う
+// //基本はconst。上書きが必要な場合はletを使う
+
+/**
+ * テンプレート文字列
+ */
+const name = "こぼりん";
+const age = 26;
+//「私の名前はこぼりんです。年齢は26歳です。」
+
+//従来の方法→＋を書かなければならないしコードも長くなるので読みづらい
+const message1 = "私の名前は" + name + "です。年齢は" + age + "歳です。";
+console.log(message1);
+
+//テンプレート文字列を用いた方法
+const message2 = `私の名前は${name}です。年齢は${age}歳です。`;
+console.log(message2);
