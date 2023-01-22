@@ -117,11 +117,48 @@
 /**
  * デフォルト値、引数など　※Reactでよく使う
  */
-// nameだけでは undefinedとなるので、name="ゲスト"と入れてデフォルト化（初期値）する。
-const sayHello = (name = "ゲスト") => console.log(`こんにちは！${name}さん！`);
-sayHello("こぼりん");
+// // nameだけでは undefinedとなるので、name="ゲスト"と入れてデフォルト化（初期値）する。
+// const sayHello = (name = "ゲスト") => console.log(`こんにちは！${name}さん！`);
+// sayHello("こぼりん");
 
 /**
  * スプレッド構文 ...　ややこいらしい
  */
-//配列の展開
+// //配列の展開
+// const arr1 = [1, 2];
+// // console.log(arr1);
+// // //→かっこ付きの数字が表示される
+
+// // console.log(...arr1);
+// // //→配列の中身を単純に表示した形となる
+
+// const sumFunc = (num1, num2) => console.log(num1 + num2); //→アロー関数
+// sumFunc(arr1[0], arr1[1]); //→引数の指定　　→結果は3となる
+// sumFunc(...arr1);  //→136行目と同じ処理。スプレッド構文は要素は順番に設定され処理される（順番処理）
+
+//まとめる
+// const arr2 = [1, 2, 3, 4, 5];
+// const [num1, num2, ...arr3] = arr2;
+// //　↑スプレッド構文で残りの値が何であろうとまとめて受け取る設定
+// console.log(num1);
+// console.log(num2);
+// console.log(arr3);
+// //まとめて配列を受け取るときにスプレッド構文が便利！
+
+//配列のコピー、結合　※よくReactで使う！
+const arr4 = [10, 20];
+const arr5 = [30, 40];
+
+const arr6 = [...arr4]; //149行目と全く同じ。→配列をコピーするときにも使える
+arr6[0] = 100;
+console.log(arr4);
+//スプレッド構文では163行目のようなことは起きない→元の配列は変更の影響を受けない
+//arr6の値を変更すると、[100,20]と表示される。arr4を宣言しても元の値は変わらず[10,20]と出る
+
+// const arr7 = [...arr4, ...arr5];
+// console.log(arr7);
+
+// const arr8 = arr4;
+// arr8[0] = 100;
+// console.log(arr4);
+//158行目みたいに指定するとarr4の元の値も影響を受けて変化してしまう→エラーの原因に
