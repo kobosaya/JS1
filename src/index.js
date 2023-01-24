@@ -146,12 +146,12 @@
 // //まとめて配列を受け取るときにスプレッド構文が便利！
 
 //配列のコピー、結合　※よくReactで使う！
-const arr4 = [10, 20];
-const arr5 = [30, 40];
+// const arr4 = [10, 20];
+// const arr5 = [30, 40];
 
-const arr6 = [...arr4]; //149行目と全く同じ。→配列をコピーするときにも使える
-arr6[0] = 100;
-console.log(arr4);
+// const arr6 = [...arr4]; //149行目と全く同じ。→配列をコピーするときにも使える
+// arr6[0] = 100;
+// console.log(arr4);
 //スプレッド構文では163行目のようなことは起きない→元の配列は変更の影響を受けない
 //arr6の値を変更すると、[100,20]と表示される。arr4を宣言しても元の値は変わらず[10,20]と出る
 
@@ -162,3 +162,47 @@ console.log(arr4);
 // arr8[0] = 100;
 // console.log(arr4);
 //158行目みたいに指定するとarr4の元の値も影響を受けて変化してしまう→エラーの原因に
+
+/**
+ * mapやfilterを使った配列の処理→構文を使わなくてもよくなる
+ */
+// const nameArr = ["田中", "山田", "じゃけぇ"];
+// for (let index = 0; index < nameArr.length; index++) {
+//   console.log(nameArr[index]);
+// }
+
+//mapは中にアロー関数を書ける　↓基本的なmapの書き方
+// const nameArr2 = nameArr.map((name) => {
+//   return name;
+// });
+// console.log(nameArr2);
+
+//アロー関数の省略版書いてる↓　一行で170～172のことが書けた！
+// nameArr.map((name) => console.log(name));
+
+//filter関数＝ある条件に一致したものだけ返却して新しい配列を生成する
+// const numArr = [1, 2, 3, 4, 5];
+// const newNumArr = numArr.filter((num) => {
+//   return num % 2 === 1;
+// });
+// console.log(newNumArr);
+
+// //何番目は○○ですとしたいとき↓　``はテンプレート文字列
+const nameArr = ["田中", "山田", "じゃけぇ"];
+// for (let index = 0; index < nameArr.length; index++) {
+//   console.log(`${index + 1}番目は${nameArr[index]}です`);
+// }
+// //↑　+1するとより何番目かわかりやすくなる（しないと0番目スタート）
+
+//mapは引数を2つ以上取ることができる　→用途に合わせて引数を増やせる
+// nameArr.map((name, index) => console.log(`${index + 1}番目は${name}です`));
+
+const newNameArr = nameArr.map((name) => {
+  if (name === "じゃけぇ") {
+    return name;
+  } else {
+    return `${name}さん`;
+  }
+});
+console.log(newNameArr);
+//じゃけぇ以外の名前に「さん」をつけることができた　mapはTODOリストでも多用していく
