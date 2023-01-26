@@ -188,7 +188,7 @@
 // console.log(newNumArr);
 
 // //何番目は○○ですとしたいとき↓　``はテンプレート文字列
-const nameArr = ["田中", "山田", "じゃけぇ"];
+// const nameArr = ["田中", "山田", "じゃけぇ"];
 // for (let index = 0; index < nameArr.length; index++) {
 //   console.log(`${index + 1}番目は${nameArr[index]}です`);
 // }
@@ -197,12 +197,41 @@ const nameArr = ["田中", "山田", "じゃけぇ"];
 //mapは引数を2つ以上取ることができる　→用途に合わせて引数を増やせる
 // nameArr.map((name, index) => console.log(`${index + 1}番目は${name}です`));
 
-const newNameArr = nameArr.map((name) => {
-  if (name === "じゃけぇ") {
-    return name;
-  } else {
-    return `${name}さん`;
-  }
-});
-console.log(newNameArr);
-//じゃけぇ以外の名前に「さん」をつけることができた　mapはTODOリストでも多用していく
+// const newNameArr = nameArr.map((name) => {
+//   if (name === "じゃけぇ") {
+//     return name;
+//   } else {
+//     return `${name}さん`;
+//   }
+// });
+// console.log(newNameArr);
+// //じゃけぇ以外の名前に「さん」をつけることができた　mapはTODOリストでも多用していく
+
+/**
+ * 三項演算子
+ */
+//ある条件? 条件がtrueの時：条件がfalseの時
+// const val1 = 1 > 0 ? 'trueです' : 'falseです';
+// console.log(val1);
+//1より大きければtrueですと返される。小さければfalse
+
+// const num = "1300";
+// console.log(num.toLocaleString());
+// //toLocaleStringは金額などの3桁表示に最適。文字列には対応しない
+
+//例①
+// const formattedNum =
+//   typeof num === "number" ? num.toLocaleString() : "数値を入力してください";
+// console.log(formattedNum);
+//typeofはどんな型なのかを判定してくれるもの
+
+// //例②
+const checkSum = (num1, num2) => {
+  return num1 + num2 > 100 ? "100を超えています！！" : "許容範囲内です";
+};
+console.log(checkSum(50, 40));
+//checkSumは数値に対して許容範囲内なのかチェックしてくれるもの
+
+/**
+ * 論理演算子の本当の意味を知ろう　&& ||
+ */
