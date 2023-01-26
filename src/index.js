@@ -226,12 +226,37 @@
 //typeofはどんな型なのかを判定してくれるもの
 
 // //例②
-const checkSum = (num1, num2) => {
-  return num1 + num2 > 100 ? "100を超えています！！" : "許容範囲内です";
-};
-console.log(checkSum(50, 40));
-//checkSumは数値に対して許容範囲内なのかチェックしてくれるもの
+// console.log(checkSum(50, 40));
+// //chconst checkSum = (num1, num2) => {
+//   return num1 + num2 > 100 ? "100を超えています！！" : "許容範囲内です";
+// };
+// coeckSumは数値に対して許容範囲内なのかチェックしてくれるもの
 
 /**
- * 論理演算子の本当の意味を知ろう　&& ||
+ * 論理演算子の本当の意味を知ろう　&&(も、かつ) ||(か、または)
  */
+// const flag1 = true;
+// const flag2 = true;
+
+// if (flag1 || flag2) {
+//   console.log("1か2はtrueになります");
+// }
+
+// if (flag1 && flag2) {
+//   console.log("1も2もtrueになります");
+// }
+// //flag2=falseのとき何も起こらない
+// //flag2=trueのとき、1も2もtrueになりますと表示される
+
+// ||は左側がfalseなら右側を返す
+// const num = 100;
+// const fee = num || "金額未設定です";
+// console.log(fee);
+//const num = nullのとき、金額は未設定です（nullはfalse判定）
+//const num = 100のとき、100
+
+// &&は左側がtrueなら右側を返す
+const num2 = 100;
+const fee2 = num2 && "何か設定されました";
+console.log(fee2);
+// nullが設定されるとnullが表示される
